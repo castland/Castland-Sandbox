@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Encuesta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headerSection">
+            <h1>Formulario de Encuesta</h1>
+            <p>Nos interesa conocer mas sobre tus actividades y pasatiempos</p>
+        </div>
+
+        <div class="formContainer">
+            <form method="post">
+
+                <label for="name">Nombre: </label><br>
+                <input type="text" name="" id="name" required placeholder="Escribe tu nombre">
+                <br>
+
+                <label for="email">Correo Electronico: </label>
+                <br>
+                <input type="email" name="" id="email" required placeholder="correo@ejemplo.com">
+                <br>
+
+                <label for="edad">Edad: </label>
+                <br>
+                <input type="number" name="" id="edad" required placeholder="">
+                <br>
+
+                <label for="rol">Cual es tu ocupacion? </label>
+                <br>
+                <select name="" id="rol" required>
+                    <option value="default">Escoja una opcion</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Empleado">Empleado</option>
+                </select> <br>
+
+                <label for="radio">Con que frecuencia practicas tus pasatiempos? </label>
+                <br>
+                <input type="radio" name="frecuencia" id="todos-dias" value="Todos los dias" required>
+                <label for="todos-dias">Todos los dias</label>
+                <br>
+                <input type="radio" name="frecuencia" id="varias-veces" value="Varias veces al dia" required>
+                <label for="varias-veces">Varias veces al dia</label>
+                <br>
+                <input type="radio" name="frecuencia" id="una-vez" value="Una vez al dia" required>
+                <label for="una-vez">Una vez al dia</label>
+                <br>
+
+                <label for="aspectos">Que aspectos valoras mas en un pasatiempo? (Marca los que correspondan)</label>
+                <br>
+                <input type="checkbox" name="aspectos" id="diversion" value="Diversion">
+                <label for="diversion">Diversion</label>
+                <br>
+                <input type="checkbox" name="aspectos" id="aprendizaje" value="Aprendizaje">
+                <label for="aprendizaje">Aprendizaje</label>
+                <br>
+                <input type="checkbox" name="aspectos" id="compartir" value="Compartir con otras personas">
+                <label for="compartir">Compartir con otras personas</label>
+                <br>
+                <input type="checkbox" name="aspectos" id="relajacion" value="Relajacion">
+                <label for="relajacion">Relajacion</label>
+                <br>
+
+                <label for="comments">Comentarios adicionales: </label>
+                <br>
+                <textarea name="" id="comments"></textarea>
+                <br>
+
+                <button class="btnEnviar">Enviar</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
