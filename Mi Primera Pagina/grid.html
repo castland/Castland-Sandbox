@@ -3,18 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Semantico</title>
+    <title>HTML Semántico con Grid</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid-body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside main"
+                "footer footer";
+            gap: 10px;
+            padding: 15px;
+            min-height: 100vh;
+        }
+
+        .grid-header {
+            grid-area: header;
+            background: linear-gradient(to right, #0066cc, #00aaff);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .grid-nav {
+            grid-area: nav;
+            background-color: #1a1a1a;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .grid-nav-list {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .grid-nav-link {
+            color: #00d4ff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .grid-nav-link:hover {
+            background-color: #2a2a2a;
+        }
+
+        .grid-main {
+            grid-area: main;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .grid-article {
+            background-color: #252525;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #00aaff;
+        }
+
+        .grid-article-title {
+            color: #00d4ff;
+            margin-bottom: 8px;
+        }
+
+        .grid-section {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #1e1e1e;
+            border-radius: 5px;
+        }
+
+        .grid-section-title {
+            color: #66ccff;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .grid-aside {
+            grid-area: aside;
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .grid-aside-title {
+            color: #ffaa00;
+            margin-bottom: 10px;
+        }
+
+        .grid-aside-list {
+            list-style: none;
+        }
+
+        .grid-aside-item {
+            padding: 6px;
+            margin: 5px 0;
+            background-color: #252525;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .grid-footer {
+            grid-area: footer;
+            background-color: #0d0d0d;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            color: #888;
+            border: 1px solid #222;
+        }
+    </style>
 </head>
 <body>
-    
-    <header>
-        <h1>HTML Semantico</h1>
+    <header class="global-header">
+        <h1>HTML Semántico con Grid</h1>
+        <p>Ejemplo de estructura semántica con CSS Grid</p>
     </header>
 
-    <main>
-        <h2>Main content</h2>
-    </main>
+    <nav class="global-nav">
+        <ul class="global-nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="form.html">Formulario</a></li>
+            <li><a href="grid.html" class="active">HTML Semántico</a></li>
+            <li><a href="modeloCaja.html">Modelo de Cajas</a></li>
+            <li><a href="practicaEnClase.html">Práctica</a></li>
+        </ul>
+    </nav>
+
+    <div class="grid-body">
+    
+        <header class="grid-header">
+            <h2>Estructura Semántica</h2>
+        </header>
+
+        <nav class="grid-nav">
+            <ul class="grid-nav-list">
+                <li><a href="#inicio" class="grid-nav-link">Inicio</a></li>
+                <li><a href="#articulos" class="grid-nav-link">Artículos</a></li>
+                <li><a href="#contacto" class="grid-nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main class="grid-main">
+            <article class="grid-article">
+                <h3 class="grid-article-title">Artículo Principal</h3>
+                <p>Este es un ejemplo de contenido principal usando la etiqueta &lt;article&gt;.</p>
+                
+                <section class="grid-section">
+                    <h4 class="grid-section-title">Sección 1</h4>
+                    <p>Las secciones agrupan contenido relacionado dentro del artículo.</p>
+                </section>
+                
+                <section class="grid-section">
+                    <h4 class="grid-section-title">Sección 2</h4>
+                    <p>Cada sección puede tener su propio encabezado y contenido.</p>
+                </section>
+            </article>
+
+            <article class="grid-article">
+                <h3 class="grid-article-title">Segundo Artículo</h3>
+                <p>Otro artículo independiente con su propio contenido.</p>
+            </article>
+        </main>
+
+        <aside class="grid-aside">
+            <h3 class="grid-aside-title">Contenido Relacionado</h3>
+            <p>El elemento &lt;aside&gt; se usa para contenido complementario.</p>
+            <ul class="grid-aside-list">
+                <li class="grid-aside-item">Enlace relacionado 1</li>
+                <li class="grid-aside-item">Enlace relacionado 2</li>
+                <li class="grid-aside-item">Enlace relacionado 3</li>
+            </ul>
+        </aside>
+
+        <footer class="grid-footer">
+            <p>&copy; 2026 - Ejemplo de HTML Semántico</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>

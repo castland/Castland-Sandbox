@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Cajas y Display</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        .modelo-body {
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .modelo-titulo {
+            text-align: center;
+            color: #00d4ff;
+        }
+
+        .modelo-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .caja-ejemplo {
+            background-color: #1a5f1a;
+            color: white;
+            padding: 25px;
+            border: 8px solid #4CAF50;
+            margin: 30px;
+            width: 250px;
+        }
+
+        .caja-visual {
+            background-color: #1a1a1a;
+            padding: 15px;
+            margin: 25px auto;
+            width: 350px;
+            border: 1px solid #444;
+        }
+
+        .caja-content {
+            background-color: #0066cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .caja-padding {
+            background-color: #2d5016;
+            padding: 15px;
+        }
+
+        .caja-border {
+            border: 6px dashed #ff9800;
+            padding: 0;
+        }
+
+        .caja-margin {
+            background-color: #4a4a00;
+            margin: 20px;
+            padding: 12px;
+            border: 3px solid #ffeb3b;
+        }
+
+        .explicacion-box {
+            background-color: #1a2a3a;
+            padding: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #00d4ff;
+            color: #e0e0e0;
+        }
+
+        .codigo-ejemplo {
+            background-color: #1e1e1e;
+            color: #4ec9b0;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        /* Estilos para Display */
+        .display-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #333;
+        }
+
+        .display-container {
+            background-color: #1a1a1a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .display-titulo-tipo {
+            color: #ff9800;
+            margin-bottom: 10px;
+        }
+
+        .ejemplo-block {
+            display: block;
+            background-color: #cc0066;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+
+        .ejemplo-inline {
+            display: inline;
+            background-color: #9c27b0;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+        }
+
+        .ejemplo-inline-block {
+            display: inline-block;
+            background-color: #673ab7;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            width: 120px;
+        }
+
+        .contenedor-flex {
+            display: flex;
+            gap: 10px;
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .item-flex {
+            background-color: #00897b;
+            padding: 15px;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .contenedor-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: #1e1e1e;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .item-grid {
+            background-color: #1976d2;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .ejemplo-none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="global-header">
+        <h1>Modelo de Cajas y Display</h1>
+        <p>Aprende sobre el modelo de cajas CSS y los tipos de display</p>
+    </header>
+
+    <nav class="global-nav">
+        <ul class="global-nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="form.html">Formulario</a></li>
+            <li><a href="grid.html">HTML Semántico</a></li>
+            <li><a href="modeloCaja.html" class="active">Modelo de Cajas</a></li>
+            <li><a href="practicaEnClase.html">Práctica</a></li>
+        </ul>
+    </nav>
+    
+    <div class="modelo-body">
+    
+    <div class="modelo-container">
+        <h1 class="modelo-titulo">Modelo de Cajas CSS</h1>
+
+        <div class="explicacion-box">
+            <strong>El modelo de cajas está compuesto por:</strong>
+            <ul>
+                <li><strong>Content:</strong> El contenido real (texto, imágenes, etc.)</li>
+                <li><strong>Padding:</strong> Espacio entre el contenido y el borde</li>
+                <li><strong>Border:</strong> El borde que rodea el padding y el contenido</li>
+                <li><strong>Margin:</strong> Espacio exterior que separa el elemento de otros</li>
+            </ul>
+        </div>
+
+        <h2 class="modelo-titulo">Ejemplo Visual</h2>
+
+        <div class="caja-ejemplo">
+            <strong>CONTENIDO</strong>
+            <p>Este es el contenido de la caja</p>
+            <p>Padding: 30px | Border: 10px | Margin: 40px</p>
+        </div>
+
+        <div class="codigo-ejemplo">
+            .caja-ejemplo {<br>
+            &nbsp;&nbsp;padding: 30px;<br>
+            &nbsp;&nbsp;border: 10px solid #2E7D32;<br>
+            &nbsp;&nbsp;margin: 40px;<br>
+            &nbsp;&nbsp;width: 300px;<br>
+            }
+        </div>
+
+        <h2 class="modelo-titulo">Capas del Modelo</h2>
+
+        <div class="caja-visual">
+            <div class="caja-margin">
+                <strong>MARGIN (amarillo)</strong>
+                <div class="caja-border">
+                    <div class="caja-padding">
+                        <strong>PADDING (verde)</strong>
+                        <div class="caja-content">
+                            <strong>CONTENT (azul)</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explicacion-box">
+            <strong>Nota:</strong> El borde naranja punteado representa el BORDER. 
+            El ancho total del elemento = width + padding + border + margin
+        </div>
+
+        <div class="display-section">
+            <h1 class="modelo-titulo">Tipos de Display</h1>
+
+            <div class="explicacion-box">
+                <strong>La propiedad display controla cómo se comporta un elemento en el flujo del documento.</strong>
+            </div>
+
+            <!-- BLOCK -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: block</h3>
+                <p>Ocupa todo el ancho disponible y comienza en una nueva línea.</p>
+                <div class="ejemplo-block">Elemento 1</div>
+                <div class="ejemplo-block">Elemento 2</div>
+                <div class="ejemplo-block">Elemento 3</div>
+                <div class="codigo-ejemplo">
+                    display: block;
+                </div>
+            </div>
+
+            <!-- INLINE -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: inline</h3>
+                <p>Se coloca en la misma línea, no acepta width/height.</p>
+                <div>
+                    <span class="ejemplo-inline">Elemento 1</span>
+                    <span class="ejemplo-inline">Elemento 2</span>
+                    <span class="ejemplo-inline">Elemento 3</span>
+                </div>
+                <div class="codigo-ejemplo">
+                    display: inline;
+                </div>
+            </div>
+
+            <!-- INLINE-BLOCK -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: inline-block</h3>
+                <p>Se coloca en línea pero acepta width/height.</p>
+                <div>
+                    <div class="ejemplo-inline-block">Item 1</div>
+                    <div class="ejemplo-inline-block">Item 2</div>
+                    <div class="ejemplo-inline-block">Item 3</div>
+                </div>
+                <div class="codigo-ejemplo">
+                    display: inline-block;
+                </div>
+            </div>
+
+            <!-- FLEX -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: flex</h3>
+                <p>Crea un contenedor flexible para distribuir elementos.</p>
+                <div class="contenedor-flex">
+                    <div class="item-flex">Flex 1</div>
+                    <div class="item-flex">Flex 2</div>
+                    <div class="item-flex">Flex 3</div>
+                </div>
+                <div class="codigo-ejemplo">
+                    display: flex;<br>
+                    gap: 10px;
+                </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: grid</h3>
+                <p>Crea una cuadrícula bidimensional para organizar elementos.</p>
+                <div class="contenedor-grid">
+                    <div class="item-grid">1</div>
+                    <div class="item-grid">2</div>
+                    <div class="item-grid">3</div>
+                    <div class="item-grid">4</div>
+                    <div class="item-grid">5</div>
+                    <div class="item-grid">6</div>
+                </div>
+                <div class="codigo-ejemplo">
+                    display: grid;<br>
+                    grid-template-columns: repeat(3, 1fr);
+                </div>
+            </div>
+
+            <!-- NONE -->
+            <div class="display-container">
+                <h3 class="display-titulo-tipo">display: none</h3>
+                <p>Oculta completamente el elemento (no ocupa espacio).</p>
+                <div class="ejemplo-block">Elemento visible</div>
+                <div class="ejemplo-none">Elemento oculto</div>
+                <div class="ejemplo-block">Otro elemento visible</div>
+                <div class="codigo-ejemplo">
+                    display: none;
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

@@ -1,82 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Encuesta</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="mainContainer">
-        <div class="headerSection">
-            <h1>Formulario de Encuesta</h1>
-            <p>Nos interesa conocer mas sobre tus actividades y pasatiempos</p>
-        </div>
+    <header class="global-header">
+        <h1>Formulario de Encuesta</h1>
+        <p>Nos interesa conocer más sobre tus actividades y pasatiempos</p>
+    </header>
 
-        <div class="formContainer">
+    <nav class="global-nav">
+        <ul class="global-nav-list">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="form.html" class="active">Formulario</a></li>
+            <li><a href="grid.html">HTML Semántico</a></li>
+            <li><a href="modeloCaja.html">Modelo de Cajas</a></li>
+            <li><a href="practicaEnClase.html">Práctica</a></li>
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <div class="form-section">
             <form method="post">
 
-                <label for="name">Nombre: </label><br>
-                <input type="text" name="" id="name" required placeholder="Escribe tu nombre">
-                <br>
+                <label for="name">Nombre:</label>
+                <input type="text" name="nombre" id="name" required placeholder="Escribe tu nombre">
 
-                <label for="email">Correo Electronico: </label>
-                <br>
-                <input type="email" name="" id="email" required placeholder="correo@ejemplo.com">
-                <br>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" name="email" id="email" required placeholder="correo@ejemplo.com">
 
-                <label for="edad">Edad: </label>
-                <br>
-                <input type="number" name="" id="edad" required placeholder="">
-                <br>
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" id="edad" required placeholder="18" min="1" max="120">
 
-                <label for="rol">Cual es tu ocupacion? </label>
-                <br>
-                <select name="" id="rol" required>
-                    <option value="default">Escoja una opcion</option>
+                <label for="rol">¿Cuál es tu ocupación?</label>
+                <select name="ocupacion" id="rol" required>
+                    <option value="">Escoge una opción</option>
                     <option value="Estudiante">Estudiante</option>
                     <option value="Empleado">Empleado</option>
-                </select> <br>
+                    <option value="Independiente">Independiente</option>
+                    <option value="Otro">Otro</option>
+                </select>
 
-                <label for="radio">Con que frecuencia practicas tus pasatiempos? </label>
-                <br>
-                <input type="radio" name="frecuencia" id="todos-dias" value="Todos los dias" required>
-                <label for="todos-dias">Todos los dias</label>
-                <br>
-                <input type="radio" name="frecuencia" id="varias-veces" value="Varias veces al dia" required>
-                <label for="varias-veces">Varias veces al dia</label>
-                <br>
-                <input type="radio" name="frecuencia" id="una-vez" value="Una vez al dia" required>
-                <label for="una-vez">Una vez al dia</label>
-                <br>
+                <label>¿Con qué frecuencia practicas tus pasatiempos?</label>
+                <div>
+                    <input type="radio" name="frecuencia" id="todos-dias" value="Todos los dias" required>
+                    <label for="todos-dias">Todos los días</label>
+                </div>
+                <div>
+                    <input type="radio" name="frecuencia" id="varias-veces" value="Varias veces a la semana" required>
+                    <label for="varias-veces">Varias veces a la semana</label>
+                </div>
+                <div>
+                    <input type="radio" name="frecuencia" id="una-vez" value="Una vez a la semana" required>
+                    <label for="una-vez">Una vez a la semana</label>
+                </div>
+                <div>
+                    <input type="radio" name="frecuencia" id="raramente" value="Raramente" required>
+                    <label for="raramente">Raramente</label>
+                </div>
 
-                <label for="aspectos">Que aspectos valoras mas en un pasatiempo? (Marca los que correspondan)</label>
-                <br>
-                <input type="checkbox" name="aspectos" id="diversion" value="Diversion">
-                <label for="diversion">Diversion</label>
-                <br>
-                <input type="checkbox" name="aspectos" id="aprendizaje" value="Aprendizaje">
-                <label for="aprendizaje">Aprendizaje</label>
-                <br>
-                <input type="checkbox" name="aspectos" id="compartir" value="Compartir con otras personas">
-                <label for="compartir">Compartir con otras personas</label>
-                <br>
-                <input type="checkbox" name="aspectos" id="relajacion" value="Relajacion">
-                <label for="relajacion">Relajacion</label>
-                <br>
+                <label>¿Qué aspectos valoras más en un pasatiempo?</label>
+                <small>(Marca los que correspondan)</small>
+                <div>
+                    <input type="checkbox" name="aspectos" id="diversion" value="Diversion">
+                    <label for="diversion">Diversión</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="aspectos" id="aprendizaje" value="Aprendizaje">
+                    <label for="aprendizaje">Aprendizaje</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="aspectos" id="compartir" value="Compartir con otras personas">
+                    <label for="compartir">Compartir con otras personas</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="aspectos" id="relajacion" value="Relajacion">
+                    <label for="relajacion">Relajación</label>
+                </div>
 
-                <label for="comments">Comentarios adicionales: </label>
-                <br>
-                <textarea name="" id="comments"></textarea>
-                <br>
+                <label for="comments">Comentarios adicionales:</label>
+                <textarea name="comentarios" id="comments" placeholder="Escribe aquí tus comentarios..."></textarea>
 
-                <button class="btnEnviar">Enviar</button>
+                <button type="submit">Enviar Encuesta</button>
 
             </form>
         </div>
     </div>
-</body>
 
+</body>
 </html>
