@@ -22,6 +22,17 @@ b {
     background-color: transparent;
 }
 
+.navMenuList {
+    list-style: none;
+    display:inline-flex;
+}
+
+.navMenuList li {
+    padding-right: 1%;
+    width: fit-content;
+    text-align: center;
+}
+
 .recetaContainer {
     border-color: white;
     border-radius: 25px;
@@ -125,7 +136,124 @@ a:hover {
 
 .btnEnviar {
     padding: 2% 5%;
-    background-color: chocolate;
+    background-color: rgb(210, 105, 30);
     border-radius: 25px;
     border: none;
+}
+
+/* =============== ESTILOS PRACTICA EN CLASE #8 =============== */
+
+.practicaBody {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.headerPractica h1 {
+    color: rgb(255, 210, 88);
+    text-align: center;
+}
+
+#textoUnico {
+    background-color: rgb(255, 157, 157);
+    color: rgb(0, 0, 0);
+    padding: 1%;
+    border-radius: 15px;
+    border: 2px solid rgb(255, 255, 255);
+    width: fit-content;
+}
+
+.practicaMainContainer {
+    background-color: rgb(54, 54, 54);
+    border: 1px solid rgb(252, 252, 252);
+    border-radius: 15px;
+    padding: 1%;
+}
+
+.textPractica h2, .listaPractica h2, .citaPractica h2, .formPractica h2 {
+    color: rgb(151, 255, 255);
+} 
+
+.textoGrande {
+    font-size: 2rem;
+}
+
+.textPractica strong {
+    color: rgb(105, 253, 105);
+}
+
+.listaPractica ul {
+    list-style: none;
+}
+
+.listaPractica li {
+    padding: 1%;
+    margin: 1% 0;
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.elementoUno {
+    background-color: rgb(255, 255, 50);
+}
+
+.elementoDos {
+    background-color: rgb(109, 255, 109);
+}
+
+.elementoTres {
+    background-color: rgb(131, 212, 255);
+}
+
+.bloqueQuote {
+    background-color: #ffffff;
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    border-left: 5px solid rgb(255, 145, 0);
+    padding: 1%;
+    width: fit-content;
+}
+
+.formPractica input {
+    height: 30px;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid aqua;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+
+.formPractica input:focus {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(255, 101, 46);
+}
+
+.btnAzul {
+    background-color: rgb(82, 82, 247);
+    color: #ffffff;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+    margin-right: 1%;
+    cursor: pointer;
+}
+
+.btnAzul:hover {
+    background-color: rgb(135, 135, 255);
+    
+}
+
+.btnRojo {
+    background-color: rgb(253, 88, 88);
+    color: #ffffff;
+    padding: 1%;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnRojo:hover {
+    background-color: rgb(250, 125, 125);
 }
