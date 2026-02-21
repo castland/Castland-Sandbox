@@ -168,6 +168,102 @@
         .ejemplo-none {
             display: none;
         }
+
+        /* Prácticas de clase - Flex y Grid */
+        .practica-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 3px solid #00d4ff;
+            max-width: 1200px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Práctica Flex */
+        .container {
+            border: 3px solid grey;
+            display: flex;
+            height: 200px;
+            flex-direction: row;
+            padding: 1%;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            flex: 1;
+            background-color: orange;
+            margin: 1%;
+            padding: 1%;
+            display: flex;
+            flex-direction: row;
+            border-radius: 15px;
+            border: 2px solid #ffff;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .largo {
+            flex: 2;
+        }
+
+        .corto {
+            flex: 1;
+        }
+
+        .texto {
+            text-align: center;
+            color: #ffff;
+        }
+
+        button {
+            background-color: black;
+            color: #ffff;
+            height: fit-content;
+            width: fit-content;
+            padding: 10%;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px 1px #000000;
+            border: none;
+            margin: 10%;
+        }
+
+        button:hover {
+            background-color: grey;
+            transform: scale(1.1);
+        }
+
+        .containerHola {
+            justify-content: space-between;
+        }
+
+        .hola {
+            border: 1px solid white;
+            font-size: 50px;
+        }
+
+        /* Práctica Grid */
+        .container-grid {
+            border: 3px solid grey;
+            height: 200px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: auto;
+            gap: 10px;
+        }
+
+        .item-grid-practica {
+            background-color: orange;
+        }
+
+        .filaCompleta {
+            grid-column: 1 / 4;
+        }
+
+        .dobleAltura {
+            grid-row: 2 / 4;
+        }
     </style>
 </head>
 <body>
@@ -331,6 +427,61 @@
                 </div>
             </div>
 
+        </div>
+
+    </div>
+
+    <!-- Prácticas de Clase -->
+    <div class="practica-section">
+        <h1 class="modelo-titulo">Prácticas de Clase</h1>
+
+        <!-- Práctica Flex -->
+        <h2 class="modelo-titulo" style="color: #ff9800;">Práctica con Flexbox</h2>
+        
+        <div class="container">
+            <div class="item corto">
+                <p class="texto">SECCION 1</p>
+            </div>
+            <div class="item largo">
+                <p class="texto">SECCION 2</p>
+            </div>
+            <div class="item corto">
+                <p class="texto">SECCION 3</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="item">
+                <div class="item">
+                    <button>Boton 1</button>
+                </div>
+                <div class="item">
+                    <button>Boton 2</button>
+                </div>
+                <div class="item">
+                    <button>Boton 3</button>
+                </div>
+            </div>
+            <div class="item containerHola">
+                <p class="texto hola">HOLA</p>
+                <p class="texto hola">HOLA</p>
+                <p class="texto hola">HOLA</p>
+            </div>
+            <div class="item">
+                <p class="texto">SECCION 6</p>
+            </div>
+        </div>
+
+        <!-- Práctica Grid -->
+        <h2 class="modelo-titulo" style="color: #ff9800; margin-top: 40px;">Práctica con Grid</h2>
+        
+        <div class="container-grid">
+            <div class="item-grid-practica filaCompleta"></div>
+            <div class="item-grid-practica dobleAltura"></div>
+            <div class="item-grid-practica dobleAltura"></div>
+            <div class="item-grid-practica"></div>
+            <div class="item-grid-practica"></div>
+            <div class="item-grid-practica filaCompleta"></div>
         </div>
 
     </div>
