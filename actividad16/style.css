@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    height: 800px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.cubo {
+    height: 350px;
+    width: 350px;
+    margin: auto;
+    cursor: pointer;
+}
+
+#cubo1 {
+ background-color: rgb(255, 0, 0);   
+}
+
+#cubo2 {
+ background-color: rgb(25, 0, 255);   
+}
+
+#cubo3 {
+ background-color: rgb(0, 255, 34);   
+}
+
+#cubo4 {
+ background-color: rgb(246, 255, 0);   
+}
+
