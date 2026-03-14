@@ -1,0 +1,199 @@
+* {
+  background-color: #000000;
+  color: #ffff;
+}
+
+/* CONTENEDORES */
+.container {
+  display: flex;
+  padding: 1%;
+}
+
+.containerCajaColor,
+.containerSaludo {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 50%;
+  border: 2px solid #383838;
+  border-radius: 15px;
+  padding: 1%;
+}
+
+.containerSaludo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BOTONES */
+.btnLizzard,
+.btnContainer button,
+.containerContador button {
+  background-color: #689444;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnLizzard:hover,
+.btnContainer button:hover,
+.containerContador button:hover {
+  background-color: #75b045;
+  filter: drop-shadow(5px 5px 10px #000000);
+}
+
+.btnLizzard {
+  margin: 0 auto;
+  padding: 1% 2%;
+  border-radius: 15px;
+}
+
+/* INPUTS */
+form input,
+.calculadora input,
+.containerLista input,
+.containerTabla input {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* LABELS */
+form label,
+.calculadora label,
+.containerLista label,
+.containerTabla label {
+  font-size: 14px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+
+/* LIZZARD */
+#textoBoton {
+  font-size: 100px;
+  margin: 0;
+  text-align: center;
+}
+
+/* CAJA COLOR */
+.cajaContainer {
+  background-color: red;
+  width: 200px;
+  margin: 0 auto;
+}
+
+#textoCajaColor {
+  background-color: transparent;
+  font-size: 50px;
+  color: #ffff;
+  text-align: center;
+}
+
+.btnSaludar {
+  margin-top: 2%;
+}
+
+/* CALCULADORA */
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.calculadora label {
+  align-self: flex-start;
+  margin-left: 25%;
+}
+
+.calculadora input {
+  width: 50%;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.btnContainer button {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+#resultado {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* CONTADOR */
+.containerContador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.containerContador button {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.contador {
+  font-size: 48px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* LISTA */
+.containerLista,
+.containerTabla {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.miLista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.miLista li {
+  background-color: #222;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #383838;
+  background-color: #222;
+}
+
+th {
+  background-color: #689444;
+  font-weight: bold;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 8</title>
+  <link rel="stylesheet" href="semana8.css">
+</head>
+<body>
+
+  <div class="containerCajaColor">
+    <div class="container">
+      <button id="btnLizzard" class="btnLizzard">Lizzard!</button>
+    </div>
+    <p id="textoBoton"></p>
+  </div>
+
+  <div class="containerCajaColor">
+    <div class="container">
+      <button id="botonCaja" class="btnLizzard">Cambiar Color</button>
+    </div>
+    <div id="caja" class="container cajaContainer">
+      <p id="textoCajaColor">Soy Rojo</p>
+    </div>
+  </div>
+
+  <div class="containerSaludo">
+    <h1 id="txtSaludo">Hola!</h1>
+    <form action="submit">
+      <label for="nombre">Ingrese su Nombre:</label>
+      <input id="nombre" type="text" required>
+      <label for="edad">Ingrese su Edad:</label>
+      <input id="edad" type="text" required>
+    </form>
+    <button id="btnEnviar" class="btnLizzard btnSaludar">Saludar</button>
+  </div>
+
+  <div class="containerCajaColor calculadora">
+    <h2>Calculadora</h2>
+    <label for="valor1">Valor 1</label>
+    <input type="text" id="valor1">
+    <label for="valor2">Valor 2</label>
+    <input type="text" id="valor2">
+    <div class="btnContainer">
+      <button id="suma">+</button>
+      <button id="resta">-</button>
+      <button id="multiplicacion">*</button>
+      <button id="division">/</button>
+    </div>
+    <h2 id="resultado"></h2>
+  </div>
+
+  <div class="containerCajaColor containerContador">
+    <button id="menos">Decrease</button>
+    <div id="contador" class="contador">0</div>
+    <button id="mas">Increase</button>
+  </div>
+
+  <div class="containerCajaColor containerLista">
+    <label for="nombreLista">Nombre:</label>
+    <input type="text" id="nombreLista" required>
+    <button id="addName" class="btnLizzard">Agregar</button>
+    <ul id="miLista" class="miLista"></ul>
+  </div>
+
+  <div class="containerCajaColor containerTabla">
+    <label for="nombretabla">Nombre:</label>
+    <input type="text" id="nombretabla" required>
+    <label for="apellidoTabla">Apellido:</label>
+    <input type="text" id="apellidoTabla" required>
+    <button id="btnAddTabla" class="btnLizzard">Agregar</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+        </tr>
+      </thead>
+      <tbody id="tabla"></tbody>
+    </table>
+  </div>
+
+  <script src="semana8.js"></script>
+</body>
+</html>
