@@ -37,10 +37,10 @@ const SERVICE_IMAGES = {
   8:  'https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=600&q=80',
   9:  'https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80',
   10: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80',
-  11: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+  11: 'https://images.unsplash.com/photo-1767479003771-04aff4ba6d83?w=600&q=80',
   12: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80',
-  13: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80',
-  14: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80',
+  13: 'https://images.unsplash.com/photo-1585673428234-426087cfc984?w=600&q=80',
+  14: 'https://images.unsplash.com/photo-1744189578759-5103cc188897?w=600&q=80',
   15: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80',
 };
 
