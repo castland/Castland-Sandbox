@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Setlist — Checkout</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="header__logo">✦ THE SETLIST</a>
+    <nav class="header__nav">
+      <a href="index.html" class="btn btn--ghost btn--sm">← Volver al catálogo</a>
+    </nav>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="mobile-nav__link">← Volver al catálogo</a>
+    <a href="index.html#catalogo" class="mobile-nav__link">Catálogo</a>
+    <a href="index.html#paquetes" class="mobile-nav__link">Paquetes</a>
+    <a href="nosotros.html" class="mobile-nav__link">Nosotros</a>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- Form section -->
+  <div id="form-section">
+    <div style="padding: 32px 32px 8px; max-width:1200px; margin:0 auto;">
+      <h1 class="section-title">Detalles de tu <span class="text-accent">evento</span></h1>
+      <p class="text-muted">Completa la información para generar tu cotización formal.</p>
+    </div>
+
+    <div class="checkout-layout">
+      <!-- Form -->
+      <form class="checkout-form" id="quote-form" novalidate>
+
+        <!-- Datos del cliente -->
+        <section class="form-section-card">
+          <h2 class="form-section-title">Datos de contacto</h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="client-name">Nombre completo</label>
+              <input type="text" id="client-name" placeholder="Sofía Ramírez" required />
+            </div>
+            <div class="form-group">
+              <label for="client-email">Correo electrónico</label>
+              <input type="email" id="client-email" placeholder="email@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="client-phone">Teléfono</label>
+              <input type="tel" id="client-phone" placeholder="+506 0000 0000" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Detalles del evento -->
+        <section class="form-section-card">
+          <h2 class="form-section-title">Detalles del evento</h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="event-date">Fecha del evento</label>
+              <input type="date" id="event-date" required />
+            </div>
+            <div class="form-group">
+              <label for="event-guests">Número de personas</label>
+              <input type="number" id="event-guests" placeholder="" min="1" required />
+            </div>
+            <div class="form-group form-group--full">
+              <label for="event-location">Dirección Exacta</label>
+              <input type="text" id="event-location" placeholder="" required />
+            </div>
+            <div class="form-group form-group--full">
+              <label for="event-notes">Notas adicionales</label>
+              <textarea id="event-notes" rows="3" placeholder="Cuéntanos más sobre tu visión para el evento..."></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dropzone de imágenes -->
+        <section class="form-section-card">
+          <h2 class="form-section-title">Referencias visuales</h2>
+          <p class="text-muted" style="font-size:var(--fs-small);margin-bottom:var(--sp-2);">
+            Sube imágenes de inspiración para que nuestro equipo entienda tu visión estética.
+          </p>
+          <div class="dropzone" id="dropzone">
+            <div class="dz-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="40" height="40"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
+            </div>
+            <p>Arrastra imágenes aquí o <strong style="color:var(--accent)">haz clic para seleccionar</strong></p>
+            <p style="margin-top:4px;font-size:12px;">PNG, JPG, WEBP — Máx. 10 archivos</p>
+          </div>
+          <input type="file" id="file-input" accept="image/*" multiple style="display:none" />
+          <div class="preview-grid" id="preview-grid"></div>
+        </section>
+
+        <button type="submit" class="btn btn--primary" style="align-self:center;padding:14px 40px;width:100%;max-width:360px;">
+          Solicitar Cotización Formal
+        </button>
+      </form>
+
+      <!-- Summary sidebar -->
+      <aside class="checkout-summary">
+        <h3>Resumen de servicios</h3>
+        <div id="summary-list"></div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="summary-total">$0</span>
+        </div>
+        <div style="margin-top:var(--sp-2);padding:var(--sp-2);background:rgba(212,175,55,0.08);border-radius:6px;border:1px solid rgba(212,175,55,0.3);">
+          <p style="font-size:var(--fs-small);color:var(--text-secondary);">Reserva requerida (50%)</p>
+          <p style="font-size:20px;font-weight:600;color:var(--accent);" id="summary-reserve">$0</p>
+          <p style="font-size:12px;color:var(--text-secondary);margin-top:4px;">El 50% restante se liquida el día del evento.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Confirmation screen -->
+  <div id="confirm-section" class="hidden">
+    <div class="confirm-screen">
+      <div class="confirm-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="72" height="72" style="color:var(--accent)"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+      </div>
+      <h2>¡Cotización enviada!</h2>
+      <p>
+        Hemos recibido tu solicitud. Nuestro equipo revisará los detalles y se pondrá en contacto contigo en las próximas 24 horas.
+      </p>
+      <div style="background:var(--bg-surface);border-radius:var(--radius-card);padding:var(--sp-3);border:1px solid #2a2a2a;min-width:300px;">
+        <p class="text-muted" style="font-size:var(--fs-small);">Número de orden</p>
+        <p id="confirm-id" style="font-size:20px;font-weight:600;color:var(--accent);margin:4px 0;"></p>
+        <hr style="border-color:#2a2a2a;margin:var(--sp-2) 0;" />
+        <div style="display:flex;justify-content:space-between;font-size:var(--fs-small);">
+          <span class="text-muted">Total</span>
+          <span id="confirm-total" style="font-weight:600;"></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:var(--fs-small);margin-top:8px;">
+          <span class="text-muted">Reserva (50%)</span>
+          <span id="confirm-reserve" style="color:var(--accent);font-weight:600;"></span>
+        </div>
+      </div>
+      <a href="index.html" class="btn btn--outline">Volver al catálogo</a>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/checkout.js"></script>
+  <script>
+    const hamburgerBtn     = document.getElementById('hamburger-btn');
+    const mobileNav        = document.getElementById('mobile-nav');
+    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      mobileNavOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    hamburgerBtn.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open', open);
+      mobileNavOverlay.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileNavOverlay.addEventListener('click', closeMobileNav);
+    mobileNav.querySelectorAll('.mobile-nav__link').forEach(l => l.addEventListener('click', closeMobileNav));
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Setlist — Admin</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════
+       LOGIN SECTION
+  ══════════════════════════════ -->
+  <div id="login-section" class="login-wrapper">
+    <div class="login-card">
+      <h1>✦ THE SETLIST</h1>
+      <p>Panel de Administración</p>
+
+      <div class="login-error" id="login-error"></div>
+
+      <form id="login-form" novalidate style="display:flex;flex-direction:column;gap:var(--sp-2);">
+        <div class="form-group">
+          <label for="login-user">Correo electrónico</label>
+          <input type="email" id="login-user" placeholder="email@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="login-pass">Contraseña</label>
+          <input type="password" id="login-pass" placeholder="" required />
+        </div>
+        <button type="submit" class="btn btn--primary w-full" style="margin-top:var(--sp-1);">
+          Iniciar sesión
+        </button>
+      </form>
+
+      <p style="text-align:center;font-size:12px;color:var(--text-secondary);">
+        Demo: admin@thesetlist.com / setlist2024
+      </p>
+      <a href="index.html" style="text-align:center;font-size:13px;color:var(--text-secondary);display:block;">← Volver al sitio</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       ADMIN DASHBOARD
+  ══════════════════════════════ -->
+  <div id="admin-section" class="hidden">
+
+    <!-- Header -->
+    <header class="header">
+      <span class="header__logo">✦ THE SETLIST <span class="admin-label">Admin</span></span>
+      <nav class="header__nav">
+        <a href="index.html" class="btn btn--ghost btn--sm">← Ver sitio</a>
+        <button class="btn btn--outline btn--sm" id="logout-btn">Cerrar sesión</button>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="mobile-nav__link">← Ver sitio</a>
+      <button class="mobile-nav__link mobile-nav__link--danger" id="logout-btn-mobile">Cerrar sesión</button>
+    </div>
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+    <div class="admin-layout">
+      <h1 class="section-title" style="margin-bottom:var(--sp-3);">Dashboard</h1>
+
+      <!-- Tabs -->
+      <div class="admin-tabs">
+        <button class="tab-btn active" id="tab-services">Gestión de Servicios</button>
+        <button class="tab-btn" id="tab-orders">Órdenes</button>
+      </div>
+
+      <!-- Services Table -->
+      <div id="services-table">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Activo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- Orders Table -->
+      <div id="orders-table" class="hidden">
+        <div class="orders-toolbar">
+          <span class="orders-toolbar__count" id="orders-count"></span>
+          <button class="btn btn--danger btn--sm" id="clear-orders-btn">Eliminar todas</button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:40px;"></th>
+              <th>ID Orden</th>
+              <th>Cliente</th>
+              <th>Email</th>
+              <th>Fecha Evento</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       EDIT MODAL
+  ══════════════════════════════ -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="edit-modal">
+      <h2>Editar Servicio</h2>
+      <form id="edit-form" style="display:flex;flex-direction:column;gap:var(--sp-2);">
+        <div class="form-group">
+          <label for="edit-name">Nombre del servicio</label>
+          <input type="text" id="edit-name" required />
+        </div>
+        <div class="form-group">
+          <label for="edit-price">Precio (₡ Colones)</label>
+          <input type="number" id="edit-price" min="0" required />
+        </div>
+        <div class="form-group">
+          <label for="edit-desc">Descripción</label>
+          <textarea id="edit-desc" rows="3"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn--ghost" id="cancel-edit">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
