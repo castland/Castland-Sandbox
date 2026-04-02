@@ -92,9 +92,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: var(--sp-1);
   flex-wrap: wrap;
-  padding: var(--sp-3) var(--sp-4);
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: var(--sp-3) 0;
 }
 
 .cat-btn {
@@ -116,17 +114,25 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── Layout principal (home) ── */
-.main-layout {
+.page-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: var(--sp-3);
-  padding: var(--sp-3) var(--sp-4);
+  gap: var(--sp-4);
+  padding: 0 var(--sp-4) var(--sp-4);
   max-width: 1400px;
   margin: 0 auto;
+  align-items: start;
 }
 
+.page-layout__main { min-width: 0; }
+
+.main-layout { display: block; }
+
 @media (max-width: 900px) {
-  .main-layout { grid-template-columns: 1fr; }
+  .page-layout {
+    grid-template-columns: 1fr;
+    padding: 0 var(--sp-2) var(--sp-3);
+  }
 }
 
 /* ── Service Grid ── */
@@ -217,6 +223,7 @@ a { color: inherit; text-decoration: none; }
   position: sticky;
   top: 80px;
   height: fit-content;
+  margin-top: 90px; /* alinea visualmente con los cards de paquetes */
   background: rgba(26,26,26,0.85);
   backdrop-filter: blur(10px);
   border: 1px solid var(--accent);
@@ -587,9 +594,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Packages Section ── */
 .packages-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--sp-4) var(--sp-4);
+  padding: 0 0 var(--sp-4);
 }
 .packages-section h2 {
   font-family: var(--font-title);
@@ -805,6 +810,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .budget-widget {
     display: none !important;
+    margin-top: 0;
   }
 }
 

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Setlist — Arquitectura del Sitio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      padding: 40px 24px 80px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #D4AF37;
+      letter-spacing: 3px;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 48px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── Tree layout ── */
+    .tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* Root node */
+    .root {
+      background: #D4AF37;
+      color: #0f0f0f;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      letter-spacing: 2px;
+    }
+
+    /* Vertical connector from root */
+    .v-line {
+      width: 2px;
+      height: 40px;
+      background: #2a2a2a;
+    }
+
+    /* Horizontal bar connecting pages */
+    .h-bar-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      max-width: 1100px;
+      position: relative;
+    }
+    .h-bar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 2px;
+      background: #2a2a2a;
+      width: 78%;
+    }
+
+    /* Page columns */
+    .pages {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      width: 100%;
+      max-width: 1100px;
+      align-items: flex-start;
+    }
+
+    .page-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Connector dot + line above each page */
+    .page-connector {
+      width: 2px;
+      height: 40px;
+      background: #2a2a2a;
+    }
+
+    /* Page node */
+    .page-node {
+      border-radius: 10px;
+      padding: 12px 16px;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 2px solid;
+    }
+    .page-node.index   { border-color: #D4AF37; color: #D4AF37; background: rgba(212,175,55,0.08); }
+    .page-node.nosotros{ border-color: #2ECC71; color: #2ECC71; background: rgba(46,204,113,0.08); }
+    .page-node.checkout{ border-color: #5DADE2; color: #5DADE2; background: rgba(93,173,226,0.08); }
+    .page-node.admin   { border-color: #E74C3C; color: #E74C3C; background: rgba(231,76,60,0.08); }
+
+    .page-file {
+      font-size: 11px;
+      color: #555;
+      margin-top: 4px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    /* Section list under each page */
+    .section-list {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .section-item {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #ccc;
+      position: relative;
+      padding-left: 20px;
+    }
+    .section-item::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #444;
+    }
+    .section-item.accent::before  { background: #D4AF37; }
+    .section-item.green::before   { background: #2ECC71; }
+    .section-item.blue::before    { background: #5DADE2; }
+    .section-item.red::before     { background: #E74C3C; }
+
+    .section-label {
+      font-size: 10px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 14px;
+      margin-bottom: 4px;
+      padding-left: 4px;
+    }
+
+    /* Shared assets box */
+    .shared-wrap {
+      margin-top: 56px;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .shared-title {
+      text-align: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .shared-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .shared-card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .shared-card h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #D4AF37;
+      margin-bottom: 10px;
+    }
+    .shared-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .shared-card ul li {
+      font-size: 12px;
+      color: #888;
+      padding-left: 14px;
+      position: relative;
+    }
+    .shared-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #444;
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #666;
+    }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 700px) {
+      .pages { flex-direction: column; align-items: center; }
+      .h-bar { display: none; }
+      .page-col { width: 100%; max-width: 360px; }
+      .shared-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✦ THE SETLIST</h1>
+  <p class="subtitle">Arquitectura del sitio — Frontend</p>
+
+  <div class="tree" style="align-items:center;">
+
+    <!-- Root -->
+    <div class="root">THE SETLIST</div>
+    <div class="v-line"></div>
+
+    <!-- Horizontal connector bar -->
+    <div class="h-bar-wrap">
+      <div class="h-bar"></div>
+    </div>
+
+    <!-- Pages -->
+    <div class="pages">
+
+      <!-- index.html -->
+      <div class="page-col">
+        <div class="page-connector"></div>
+        <div class="page-node index">
+          Catálogo
+          <div class="page-file">index.html</div>
+        </div>
+        <div class="section-list">
+          <div class="section-label">Secciones</div>
+          <div class="section-item accent">Header + Nav</div>
+          <div class="section-item accent">Hero</div>
+          <div class="section-item accent">Paquetes predefinidos</div>
+          <div class="section-item accent">Filtro de categorías</div>
+          <div class="section-item accent">Grid de servicios</div>
+          <div class="section-item accent">Widget presupuesto (desktop)</div>
+          <div class="section-item accent">Footer</div>
+          <div class="section-label">Mobile</div>
+          <div class="section-item accent">Hamburger menu</div>
+          <div class="section-item accent">FAB presupuesto</div>
+          <div class="section-item accent">Drawer presupuesto</div>
+          <div class="section-label">Scripts</div>
+          <div class="section-item accent">data.js</div>
+          <div class="section-item accent">app.js</div>
+        </div>
+      </div>
+
+      <!-- nosotros.html -->
+      <div class="page-col">
+        <div class="page-connector"></div>
+        <div class="page-node nosotros">
+          Nosotros
+          <div class="page-file">nosotros.html</div>
+        </div>
+        <div class="section-list">
+          <div class="section-label">Secciones</div>
+          <div class="section-item green">Header + Nav</div>
+          <div class="section-item green">Hero — tagline</div>
+          <div class="section-item green">¿Quiénes somos?</div>
+          <div class="section-item green">Valores (3 cards)</div>
+          <div class="section-item green">¿Qué hacemos? (6 servicios)</div>
+          <div class="section-item green">¿Por qué elegirnos? (4 razones)</div>
+          <div class="section-item green">Contacto (4 cards)</div>
+          <div class="section-item green">Footer</div>
+          <div class="section-label">Mobile</div>
+          <div class="section-item green">Hamburger menu</div>
+          <div class="section-label">Scripts</div>
+          <div class="section-item green">Inline (hamburger)</div>
+        </div>
+      </div>
+
+      <!-- checkout.html -->
+      <div class="page-col">
+        <div class="page-connector"></div>
+        <div class="page-node checkout">
+          Checkout
+          <div class="page-file">checkout.html</div>
+        </div>
+        <div class="section-list">
+          <div class="section-label">Secciones</div>
+          <div class="section-item blue">Header + Nav</div>
+          <div class="section-item blue">Resumen de servicios</div>
+          <div class="section-item blue">Form — datos del cliente</div>
+          <div class="section-item blue">Form — detalles del evento</div>
+          <div class="section-item blue">Dropzone imágenes</div>
+          <div class="section-item blue">Botón cotización</div>
+          <div class="section-item blue">Pantalla confirmación</div>
+          <div class="section-label">Mobile</div>
+          <div class="section-item blue">Hamburger menu</div>
+          <div class="section-label">Scripts</div>
+          <div class="section-item blue">data.js</div>
+          <div class="section-item blue">checkout.js</div>
+          <div class="section-item blue">Inline (hamburger)</div>
+        </div>
+      </div>
+
+      <!-- admin.html -->
+      <div class="page-col">
+        <div class="page-connector"></div>
+        <div class="page-node admin">
+          Admin
+          <div class="page-file">admin.html</div>
+        </div>
+        <div class="section-list">
+          <div class="section-label">Secciones</div>
+          <div class="section-item red">Login card</div>
+          <div class="section-item red">Header + Nav (autenticado)</div>
+          <div class="section-item red">Tab — Gestión de servicios</div>
+          <div class="section-item red">Tab — Órdenes</div>
+          <div class="section-item red">Modal editar servicio</div>
+          <div class="section-label">Funciones</div>
+          <div class="section-item red">Toggle activo/inactivo</div>
+          <div class="section-item red">Editar precio / nombre</div>
+          <div class="section-item red">Ver detalle de orden</div>
+          <div class="section-item red">Marcar orden completada</div>
+          <div class="section-item red">Eliminar orden(es)</div>
+          <div class="section-label">Mobile</div>
+          <div class="section-item red">Hamburger menu</div>
+          <div class="section-label">Scripts</div>
+          <div class="section-item red">data.js</div>
+          <div class="section-item red">admin.js</div>
+        </div>
+      </div>
+
+    </div><!-- /pages -->
+
+    <!-- Shared assets -->
+    <div class="shared-wrap">
+      <div class="shared-title">Archivos compartidos por todas las páginas</div>
+      <div class="shared-grid">
+
+        <div class="shared-card">
+          <h4>CSS</h4>
+          <ul>
+            <li>variables.css — tokens de diseño (colores, tipografía, espaciado)</li>
+            <li>style.css — estilos globales, componentes, responsive breakpoints</li>
+          </ul>
+        </div>
+
+        <div class="shared-card">
+          <h4>JavaScript</h4>
+          <ul>
+            <li>data.js — servicios, paquetes, imágenes, credenciales, localStorage helpers</li>
+            <li>app.js — lógica del catálogo, presupuesto, paquetes, hamburger, drawer</li>
+            <li>checkout.js — lógica del formulario, dropzone, confirmación</li>
+            <li>admin.js — auth, tablas, CRUD servicios, gestión de órdenes</li>
+          </ul>
+        </div>
+
+        <div class="shared-card">
+          <h4>Persistencia</h4>
+          <ul>
+            <li>localStorage → ts_services (servicios editados)</li>
+            <li>localStorage → ts_orders (órdenes guardadas)</li>
+            <li>sessionStorage → ts_selected (servicios seleccionados en checkout)</li>
+            <li>sessionStorage → ts_admin_auth (sesión admin)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /tree -->
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#D4AF37"></div> index.html — Catálogo</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2ECC71"></div> nosotros.html — Sobre nosotros</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#5DADE2"></div> checkout.html — Cotización</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#E74C3C"></div> admin.html — Panel admin</div>
+  </div>
+
+</body>
+</html>
