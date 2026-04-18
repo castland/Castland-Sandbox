@@ -32,7 +32,7 @@ function renderSummary() {
     total += s.price;
     const row = document.createElement('div');
     row.className = 'summary-item';
-    row.innerHTML = `<span>${s.icon} ${s.name}</span><span>${formatCurrency(s.price)}</span>`;
+    row.innerHTML = `<span>${s.name}</span><span>${formatCurrency(s.price)}</span>`;
     summaryList.appendChild(row);
   });
   summaryTotal.textContent = formatCurrency(total);
