@@ -1,0 +1,146 @@
+/* THE SETLIST — Design Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root { 
+
+  /* Cromatica Primaria */
+  --color-brand-black:   #030303;
+  --color-brand-light:   #E4E4E4;
+  --color-brand-red:     #F21A05;
+  --color-brand-amber:   #F2B705;
+  --color-brand-purple:  #4330BE;
+
+  /* Escala de Grises */
+  --color-gris-200: #BDBDBD;
+  --color-gris-400: #9E9E9E;
+  --color-gris-600: #181818;
+
+  /* Colores Base */
+  --color-bg-transparent: transparent;
+  --color-bg-primary:   var(--color-brand-black);
+  --color-bg-surface:   var(--color-gris-600);
+  --color-bg-opacity:   #030303cc;
+
+  /* Fondo */
+  --color-fondo-pagina:    var(--color-bg-primary);
+  --color-fondo-tarjeta:   var(--color-bg-surface);
+
+  /* Cromatica Acento Principal */
+  --color-acento-primary:  var(--color-brand-amber);
+  --color-acento-hover:    #c99204;
+  --color-acento-opacity:  #f2b7051f;
+
+  /* Cromatica Acento Secundaria */
+  --color-acento-secundario:  var(--color-brand-purple);
+  --color-secundario-hover:   #3526a0;
+  --color-secundario-opacity: #4330be2e;
+
+  /* Cromatica Acento Terciaria */
+  --color-acento-terciario:   var(--color-brand-red);
+  --color-terciario-hover:    #c91404;
+  --color-terciario-opacity:  #f21a051f;
+  --color-exito-opacity: #22c55e26;
+
+  /* Cromatica Texto */
+  --color-texto:           var(--color-brand-light);
+  --color-texto-secundario:var(--color-gris-400);
+  --color-texto-invertido: var(--color-brand-black);
+
+  /* Estado */
+  --color-exito:   #22C55E;
+  --color-error:   var(--color-brand-red);
+  --color-alerta:  var(--color-brand-amber);
+  --color-info:    #7C6FCD;
+  
+  /* Hover */
+  --color-hover-acento: var(--color-acento-hover);
+
+  /* Borde */
+  --color-borde:        #e4e4e41a;
+  --color-borde-fuerte: #e4e4e433;
+  --color-borde-acento: var(--color-acento-primary);
+  
+  /* Iconos */
+  --color-icono: var(--color-acento-primary);
+
+  /* Borde */
+  --borde-delgado: 1px;
+  --borde-medio:   2px;
+  --borde-solido:    solid;
+  --borde-punteado:  dashed;
+
+  /* Radio Borde */
+  --borde-radio-sm:   4px;
+  --borde-radio-md:   8px;
+  --borde-radio-lg:   12px;
+  --borde-radio-pill: 50px;
+  --borde-radio-full: 9999px;
+ 
+  /* Espaciado */
+  --sp: 2px;
+  --sp-1:  8px;
+  --sp-2:  16px;
+  --sp-3:  24px;
+  --sp-4:  32px;
+  --sp-6:  48px;
+  --sp-8:  64px;
+  --sp-12: 96px;
+
+  /* Tipografia Family */
+  --font-family-titulo: 'Montserrat', sans-serif;
+  --font-family-cuerpo: 'Montserrat', sans-serif;
+
+  /* Tipografia Tamaño */
+  --font-size-xs:   12px;
+  --font-size-sm:   14px;
+  --font-size-base: 16px;
+  --font-size-lg:   18px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  24px;
+  --font-size-3xl:  32px;
+  --font-size-4xl:  48px;
+  --font-size-5xl:  64px;
+
+  /* Tipografia Peso */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+
+  /* Tipografia Mayuscula */
+
+  --font-uppercase: uppercase;
+
+  /* Interlineado */
+  --font-lh-tight:  1.2;
+  --font-lh-normal: 1.5;
+  --font-lh-loose:  1.75; 
+
+  /* Efectos Sombra */
+  --sombra-sm:  0 2px 8px #ffffff1a;
+  --sombra-md:  0 4px 20px #ffffff26;
+  --sombra-acento: 0 4px 24px #f2b70566;
+
+  /* Efectos Opacidad */
+  --opacidad-disabled: 0.40;
+
+  /* Transiciones */
+  --transicion-rapida:  0.15s ease;
+  --transicion-normal:  0.25s ease;
+  --transicion-lenta:   0.40s ease;
+
+  /* Transform */
+  --transform-scale-1: scale(1.03);
+
+  /* Z-index */
+  --z-base:    1;
+  --z-sticky:  100;
+  --z-modal:   300;
+  --z-toast:   400;  
+
+  /* Iconos de heroicons.com */
+  /* https://github.com/tailwindlabs/heroicons/blob/master/README.md */
+  --icono-sm:  16px;
+  --icono-md:  24px;
+  --icono-lg:  32px;
+}

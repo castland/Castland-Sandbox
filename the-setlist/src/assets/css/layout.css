@@ -1,0 +1,495 @@
+.wireframe {
+  background-color: transparent;
+  border: 2px dashed #444;
+}
+
+/* CATALOGO */
+.mainCatalogo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.catalogoHeader {
+  height: 10vh;
+}
+
+.catalogoBody {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+  padding: 24px;
+}
+
+.catalogoMain {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 24px;
+}
+
+.catalogoHero {
+  height: 15vh;
+}
+
+.catalogoPaquetes {
+  height: 20vh;
+}
+
+.catalogoFiltros {
+  height: 5vh;
+}
+
+.catalogoGrid {
+  flex: 1;
+  min-height: 20vh;
+}
+
+.catalogoWidget {
+  width: 20%;
+}
+
+.catalogoFooter {
+  height: 20vh;
+}
+
+/* ABOUT US */
+.mainNosotros {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nosotrosHeader {
+  height: 64px;
+}
+
+.nosotrosHero {
+  height: 200px;
+}
+
+.nosotrosQuienes {
+  height: 300px;
+}
+
+.nosotrosServicios {
+  height: 300px;
+}
+
+.nosotrosRazones {
+  height: 280px;
+}
+
+.nosotrosContacto {
+  height: 280px;
+}
+
+.nosotrosFooter {
+  height: 200px;
+}
+
+/* CHECKOUT */
+.mainCheckout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.checkoutHeader {
+  height: 10vh;
+}
+
+.checkoutBody {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  flex: 1;
+}
+
+.checkoutForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.checkoutDatosCliente {
+  height: 25vh;
+}
+
+.checkoutDatosEvento {
+  height: 25vh;
+}
+
+.checkoutDropzone {
+  height: 20vh;
+}
+
+.checkoutResumen {
+  width: 15%;
+}
+
+/* ADMIN LOGIN */
+.mainAdminLogin {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminLoginCard {
+  width: 20%;
+  height: 35%;
+}
+
+/* ADMIN DASHBOARD */
+.mainAdminDashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.adminEncabezado {
+  height: 10vh;
+}
+
+.adminDashboard {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.adminServicios {
+  height: 50vh;
+}
+
+.adminOrdenes {
+  flex: 1;
+  height: 50vh;
+}
+
+/* GUIA ESTILO */
+
+.guia {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.guiaNavBar {
+ background-color: var(--color-bg-surface);
+ height: 10vh;
+}
+
+.guiaBrandLogo{
+  display: flex;
+  flex-direction: column;
+}
+
+.guiaBrandLogo img {
+  width: 120px;
+  padding: var(--sp-2);
+}
+
+.guiaSeccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding-bottom: var(--sp-4);
+  border-bottom: var(--borde-delgado) var(--borde-solido) var(--color-borde);
+}
+
+.guiaFila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.guiaMuestras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+.muestra {
+  width: 120px;
+  height: 80px;
+  border-radius: var(--borde-radio-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--sp-1);
+  gap: var(--sp);
+  color: var(--color-texto);
+}
+
+.muestra span {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.muestraSmall {
+  height: 56px;
+  width: 140px;
+}
+
+.guiaTipoFila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp);
+  padding: var(--sp-1) 0;
+  border-bottom: var(--borde-delgado) var(--borde-solido) var(--color-borde);
+}
+
+.guiaTarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-2);
+}
+
+.guiaImagenTarjeta {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guiaFormulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+  max-width: 580px;
+}
+
+.guiaFormulario .campoFormulario:last-child {
+  grid-column: 1 / -1;
+}
+
+.guiaEspaciado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.guiaFilaEsp {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.guiaBarraEsp {
+  height: 20px;
+  border-radius: var(--borde-radio-sm);
+}
+
+.guiaCajaSombra {
+  width: 90px;
+  height: 70px;
+  background: var(--color-bg-surface);
+  border-radius: var(--borde-radio-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-texto-secundario);
+}
+
+.guiaCajaSombraSm {
+  box-shadow: var(--sombra-sm);
+}
+
+.guiaCajaSombraMd {
+  box-shadow: var(--sombra-md);
+}
+
+.guiaCajaSombraAcento {
+  box-shadow: var(--sombra-acento);
+}
+
+.guiaCajaRadio {
+  width: 90px;
+  height: 52px;
+  background: var(--color-bg-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-acento-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-acento-primary);
+}
+
+.guiaCajaRadioSm {
+  border-radius: var(--borde-radio-sm);
+}
+
+.guiaCajaRadioMd {
+  border-radius: var(--borde-radio-md);
+}
+
+.guiaCajaRadioLg {
+  border-radius: var(--borde-radio-lg);
+}
+
+.guiaCajaRadioPill {
+  border-radius: var(--borde-radio-pill);
+}
+
+/* BARRA ESPACIADO */
+
+.guiaBarraEsp {
+  height: 20px;
+  border-radius: var(--borde-radio-sm);
+  background: var(--color-acento-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-acento-primary);
+}
+
+.guiaBarraSp {
+  width: var(--sp);
+}
+
+.guiaBarraSp1 {
+  width: var(--sp-1);
+}
+
+.guiaBarraSp2 {
+  width: var(--sp-2);
+}
+
+.guiaBarraSp3 {
+  width: var(--sp-3);
+}
+
+.guiaBarraSp4 {
+  width: var(--sp-4);
+}
+
+.guiaBarraSp6 {
+  width: var(--sp-6);
+}
+
+.guiaBarraSp8 {
+  width: var(--sp-8);
+}
+
+.guiaEtiquetaEsp {
+  width: var(--sp-12);
+}
+
+.guiaPrecio {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-exito);
+}
+
+/* MUESTRAS COLOR BRAND */
+
+.muestraNegro {
+  background: var(--color-brand-black);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-gris-400);
+}
+
+.muestraClaro {
+  background: var(--color-brand-light);
+  color: var(--color-texto-invertido);
+}
+
+.muestraAmbar {
+  background: var(--color-brand-amber);
+  color: var(--color-texto-invertido);
+}
+
+.muestraPurpura {
+  background: var(--color-brand-purple);
+}
+
+.muestraRojo {
+  background: var(--color-brand-red);
+}
+
+/* MUESTRAS DE COLOR APLICADO */
+
+.muestraFondo {
+  background: var(--color-bg-primary);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-gris-400);
+}
+
+.muestraSuperficie {
+  background: var(--color-bg-surface);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-gris-400);
+}
+
+.muestraAcento {
+  background: var(--color-acento-primary);
+  color: var(--color-texto-invertido);
+}
+
+.muestraSecundario {
+  background: var(--color-acento-secundario);
+}
+
+.muestraExito {
+  background: var(--color-exito);
+}
+
+.muestraTerciario {
+  background: var(--color-acento-terciario);
+}
+
+/* MUESTRAS OPACIDAD */
+
+.muestraAcentoOpacidad {
+  background: var(--color-acento-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-acento-primary);
+}
+
+.muestraAcentoOpacidad span {
+  color: var(--color-acento-primary);
+}
+
+.muestraSecundarioOpacidad {
+  background: var(--color-secundario-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-acento-secundario);
+}
+
+.muestraSecundarioOpacidad span {
+  color: var(--color-texto);
+}
+
+.muestraTerciarioOpacidad {
+  background: var(--color-terciario-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-acento-terciario);
+}
+
+.muestraTerciarioOpacidad span {
+  color: var(--color-acento-terciario);
+}
+
+.muestraExitoOpacidad {
+  background: var(--color-exito-opacity);
+  border: var(--borde-delgado) var(--borde-solido) var(--color-exito);
+}
+
+.muestraExitoOpacidad span {
+  color: var(--color-exito);
+}
+
+/* GUIA ICONOS */
+
+.guiaIcono {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--color-texto);
+}
+
+.guiaIcono svg {
+  width: var(--icono-md);
+  height: var(--icono-md);
+}

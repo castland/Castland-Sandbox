@@ -1,0 +1,126 @@
+.wireframe {
+  background-color: #ffff;
+  border: 2px solid #000;
+}
+
+/* LOGIN */
+
+.mainLogin {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.login {
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.slider {
+  width: 70%;
+  height: 100vh;
+}
+
+/* INVENTARIO */
+
+.mainInventario {
+  display: flex;
+  height: 100vh;
+  gap: 24px;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebarLogo {
+  height: 8%;
+}
+
+.sidebarBuscar {
+  height: 8%;
+}
+
+.sidebarFiltros {
+  height: 60%;
+}
+
+.sidebarAcciones {
+  height: 24%;
+}
+
+.contenido {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accionInventario {
+  height: 8%;
+}
+
+.tablaInventario {
+  height: 92%;
+}
+
+/* VENDEDOR */
+
+.vendedorMain {
+  display: flex;
+  height: 100vh;
+  gap: 24px;
+}
+
+.vendedorAside {
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vendedorLogo {
+  height: 8%;
+}
+
+.vendedorBuscar {
+  height: 8%;
+}
+
+.vendedorResultados {
+  height: 84%;
+}
+
+.vendedorContenido {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vendedorAcciones {
+  height: 8%;
+}
+
+.vendedorCarrito {
+  height: 62%;
+}
+
+.vendedorPago {
+  height: 30%;
+}
+
+/* CLASE SEMANA 14 */
